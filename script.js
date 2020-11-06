@@ -125,30 +125,45 @@ switch (a) {
 }
 
 //task 5
-function baseMath(number1, number2) {
+function baseMathAdd(number1, number2) {
     let add = number1 + number2;
+    return 'результат сложение первого числа со вторым: ' + String(add) + ';'
+}
+
+function baseMathSub(number1, number2) {
     let sub = number1 - number2;
+    return 'результат вычетания первого числа из второго: ' + String(sub) + ';'
+}
+function baseMathMult(number1, number2) {
     let mult = number1 * number2;
     let div = Math.round(number1 / number2, 2);
-    return 'результат сложение первого числа со вторым: ' + String(add) + ';<br>' + 'результат вычетания первого числа из второго: ' + String(sub) + ';<br>' + 'результат умножения первого числа на второе: ' + String(mult) + ';<br>' + 'результат деления первого числа на второе: ' + String(div) + '.'
+    return 'результат умножения первого числа на второе: ' + String(mult) + ';'
+}
+
+function baseMathDiv(number1, number2) {
+    let div = Math.round(number1 / number2, 2);
+    return 'результат деления первого числа на второе: ' + String(div) + '.'
 }
 
 let newA = 3;
 let newB = 4;
-write('answer_5_1', 'Если первое число равно: ' + newA + ', а второе: ' + newB + ' то:');
-write('answer_5_2', baseMath(3, 4));
+write('answer_5_0', 'Перове число ' + newA + '. Второе число ' + newB + '.')
+write('answer_5_1', baseMathAdd(3, 4));
+write('answer_5_2', baseMathSub(3, 4));
+write('answer_5_3', baseMathMult(3, 4));
+write('answer_5_4', baseMathDiv(3, 4));
 
 //task 6
 function mathOperation(number1, number2, operation) {
     switch (operation) {
         case '+':
-            return 'результат сложение первого числа со вторым: ' + String(number1 + number2) + '.';
+            return String(baseMathAdd(number1, number2)) + '.';
         case '-':
-            return 'результат вычетания первого числа из второго: ' + String(number1 - number2) + '.';
+            return String(baseMathSub(number1, number2)) + '.';
         case '*':
-            return 'результат умножения первого числа на второе: ' + String(number1 * number2) + '.';
+            return String(baseMathMult(number1, number2)) + '.';
         case '/':
-            return 'результат деления первого числа на второе: ' + String(Math.round(number1 / number2, 2)) + '.';
+            return String(Math.round(baseMathDiv(number1, number2))) + '.';
 
     }
 }
